@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    const newNode = document.createElement('thead');
+
+
+        var j =`${num}`;
+        for (i=1;i<=num;i++)
+        {
+               newNode.innerHTML =`${th}`;
+
+               document.getElementById('messages').appendChild(newNode);
+        }
+    </script>
+</head>
+<body>
+<!--<table name="table_db" border="2">-->
+<!--    <thead >database</thead>-->
+<!--    <th>-->
+<!--        <tr>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+
+<!--        </tr>-->
+<!--    </th>-->
+<!--</table>-->
+
+
+<table>
+    <div id="messages"></div>
+    <thead>{{thead}}</thead>
+    <th>{{th}}</th>
+    
+    <tr>
+        <td>{{td1}}</td>
+        <td>{{td2}}</td>
+        <td>{{td3}}</td>
+    </tr>
+    
+    <tr><td>{{td4}}</td>
+        <td>{{td5}}</td>
+        <td>{{td6}}</td>
+    </tr>
+    
+    <tr><td>{{td7}}</td>
+        <td>{{td8}}</td>
+        <td>{{td9}}</td>
+    </tr>
+
+</table>
+</body>
+</html>
