@@ -1,4 +1,4 @@
-version: '2.0'
+version: '3.9'
 
 networks:
   app-tier:
@@ -9,10 +9,10 @@ services:
     image: 'chatapp'
     networks:
       - app-tier
-    links:
-      - mongodb
     ports:
       - 8000:8000
+    links:
+      - mongodb  
     depends_on:
       - mongodb
 
@@ -24,4 +24,3 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
       - 27018:27017
-  
