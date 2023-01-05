@@ -1,10 +1,11 @@
 FROM python:3
 
 
+WORKDIR /
     
 COPY requirements.txt ./
     
-WORKDIR /
+
 
 RUN apt update -y
 RUN apt install build-essential libdbus-glib-1-dev libgirepository1.0-dev -y
