@@ -5,7 +5,9 @@ from flask_socketio import SocketIO, join_room, leave_room
 from flask_session import Session
 # using datetime module
 
-my_client = pymongo.MongoClient("mongodb://root:root@db:27017/")
+my_client = pymongo.MongoClient("mongodb://root:root@db:27018/database?authSource=admin")
+app.config["MONGO_URI"]= my_client
+
 mydb = my_client["chatapp"]
 my_chat = mydb["all_chat"]
 my_users = mydb["all_users"]

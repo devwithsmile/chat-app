@@ -18,7 +18,10 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 host='test_mongodb'
-my_client = pymongo.MongoClient("mongodb://root:root@db:27018/")
+
+my_client = pymongo.MongoClient("mongodb://root:root@db:27018/database?authSource=admin")
+app.config["MONGO_URI"]= my_client
+
 mydb = my_client["chatapp"]
 my_rooms = mydb["all_rooms"]
 my_users = mydb["all_users"]
