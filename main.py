@@ -18,7 +18,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 host='test_mongodb'
-my_client = pymongo.MongoClient("mongodb://mongodb:27017/")
+my_client = pymongo.MongoClient("mongodb://root:root@db:27017/")
 mydb = my_client["chatapp"]
 my_rooms = mydb["all_rooms"]
 my_users = mydb["all_users"]
@@ -82,6 +82,7 @@ def logout():
 
 rooms = []
 usernames = []
+
 for x in my_chat.find({}, {"_id": 0, "room": 1}):
     rooms.append(x['room'])
 

@@ -5,23 +5,25 @@ networks:
     driver: bridge
 
 services:
+
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - 27018:27017
+    container_name: db
+
   myapp:
     build: ./
+    container_name: chatapp
     networks:
       - app-tier
     ports:
       - 8000:8000
     links:
-      - mongodb  
+      - db
     depends_on:
-      - mongodb
-
-  mongodb:
-    image: 'mongo'
-    networks:
-      - app-tier
-    environment:
-      - ALLOW_EMPTY_PASSWORD=yes
-    ports:
-      - 27018:27017
-    hostname: db-host
+      - db

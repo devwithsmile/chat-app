@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-client = MongoClient("mongodb:// mongodb:27017/")
+client = MongoClient("mongodb://root:root@db:27017/")
 mydb = client['chatapp']
 mycollection = mydb['Signup']
 
