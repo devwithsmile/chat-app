@@ -1,7 +1,7 @@
 from bson import ObjectId
 from pymongo import MongoClient
 
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb://root:root@db:27017/")
 mydata = client['chatapp']
 mycol = mydata['session_details']
 
